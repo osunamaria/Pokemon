@@ -1,0 +1,39 @@
+<%- include("template/cabecera",{tituloWeb:"Panel de administración"}) %>
+    <div class="container">
+        <h1>Pokémon encontrados</h1>
+        <a class="btn btn-success btn-block my-4" href="/pokemon/crear">Crear nuevo Pokemon</a>
+        <table class="table text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayPokemon.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayPokemon.forEach(pokemon=> { %>
+                        <tr>
+                            <td>
+                                <%= pokemon.nombre %>
+                            </td>
+                            <td>
+                                <%= pokemon.tipo %>
+                            </td>
+                            <td>
+                                <%= pokemon.descripcion %>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="pokemon/<%= pokemon.id %>">Editar/Eliminar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+        <br>
+        <a href="/bienvenida" class="text-success">Volver</a>
+    </div>
+    <%- include("template/footer") %>

@@ -1,0 +1,38 @@
+<%- include("template/cabecera",{tituloWeb:"Panel de administración"}) %>
+    <div class="container">
+        <h1>Entrenadores registrados</h1>
+        <a class="btn btn-success btn-block my-4" href="/entrenador/crearEntrenador">Crear nuevo entrenador</a>
+        <table class="table text-center">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Compañero</th>
+                    <th scope="col">Origen</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayEntrenador.length> 0) { %>
+                    <!--Haremos el foreach para recorrer el array-->
+                    <% arrayEntrenador.forEach(entrenador=> { %>
+                        <tr>
+                            <td>
+                                <%= entrenador.nombre %>
+                            </td>
+                            <td>
+                                <%= entrenador.companero %>
+                            </td>
+                            <td>
+                                <%= entrenador.origen %>
+                            </td>
+                            <td>
+                                <a class="btn btn-warning btn-sm" href="entrenador/<%= entrenador.id %>">Editar/Eliminar</a>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } %>
+            </tbody>
+        </table>
+        <br>
+        <a href="/bienvenida" class="text-success">Volver</a>
+    </div>
+    <%- include("template/footer") %>

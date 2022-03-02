@@ -1,0 +1,36 @@
+<%- include("template/cabecera",{tituloWeb:"Contacto"}) %>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2>
+                    <%= tituloContacto %>
+                </h2>
+                <p>Mandanos tus datos si quieres ser parte de nuestra comunidad</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-6">
+                <form action="/">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre: </label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Calle Ejemplo 1" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email: </label>
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="mensaje" class="form-label">Mensaje: </label>
+                        <textarea class="form-control" id="mensaje" rows="3" required></textarea>
+                    </div>
+                    <br>
+                    <button class="w-100 btn btn-primary btn-lg" type="submit">Enviar</button>
+                </form>
+                <br>
+                <p>Te responderemos cuando confirmemos que eres un verdadero entrenador</p>
+            </div>
+        </div>
+    </div>
+    <%- include("template/footer") %>
